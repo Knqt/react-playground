@@ -10,12 +10,12 @@ import { APP_NAME } from '../../config'
 const styles = {
   hoverMe: {
     '&:hover': {
-      color: 'red',
+      color: 'blue',
     },
   },
   '@media (max-width: 800px)': {
     resizeMe: {
-      color: 'red',
+      color: 'blue',
     },
   },
   specialButton: {
