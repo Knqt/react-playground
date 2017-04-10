@@ -3,6 +3,7 @@
 import 'babel-polyfill'
 
 import * as Immutable from 'immutable'
+import $ from 'jquery'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
@@ -10,18 +11,12 @@ import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
-
-import App from '../shared/app'
-import helloReducer from '../shared/reducer/hello'
-import { APP_CONTAINER_SELECTOR, JSS_SSR_SELECTOR } from '../shared/config'
-import { isProd } from '../shared/util'
-
-import setUpSocket from './socket'
-
-import $ from 'jquery'
 import Tether from 'tether'
 
-// [right after all your imports]
+import App from '../shared/app'
+import { APP_CONTAINER_SELECTOR, JSS_SSR_SELECTOR, isProd } from '../shared/config'
+import helloReducer from '../shared/reducer/hello'
+import setUpSocket from './socket'
 
 window.jQuery = $
 window.Tether = Tether
@@ -63,5 +58,4 @@ const jssServerSide = document.querySelector(JSS_SSR_SELECTOR)
 // flow-disable-next-line
 jssServerSide.parentNode.removeChild(jssServerSide)
 
-// [at the very end of the file]
 setUpSocket(store)

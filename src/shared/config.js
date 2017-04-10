@@ -17,3 +17,6 @@ export const IO_SERVER_HELLO = 'IO_SERVER_HELLO'
 
 export const JSS_SSR_CLASS = 'jss-ssr'
 export const JSS_SSR_SELECTOR = `.${JSS_SSR_CLASS}`
+
+export const isProd = process.env.NODE_ENV === 'production'
+
