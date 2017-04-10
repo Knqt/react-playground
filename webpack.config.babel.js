@@ -8,8 +8,8 @@ import { isProd } from './src/shared/util'
 
 export default {
   entry: [
-  'react-hot-loader/patch',
-  './src/client',
+    'react-hot-loader/patch',
+    './src/client',
   ],
   output: {
     filename: 'js/bundle.js',
@@ -18,7 +18,7 @@ export default {
   },
   module: {
     rules: [
-    { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
     ],
   },
   devtool: isProd ? false : 'source-map',
@@ -27,7 +27,7 @@ export default {
   },
   devServer: {
     port: WDS_PORT,
-    hot: true
+    hot: true,
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
